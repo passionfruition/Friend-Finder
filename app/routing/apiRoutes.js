@@ -1,11 +1,9 @@
 var friends = require("./../data/friends.js");
-var express = require("express");
-var app = express();
 
 // get route /api/friends to display a json of all friends
 module.exports = function(app) {
     app.get("/api/friends/", function(req, res) {
-        return res.json(friends);
+        return res.json(friends.friends);
     });
 
     // post route /api/friends which will handle incoming survey results and compatibility logic
