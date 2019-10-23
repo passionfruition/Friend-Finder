@@ -3,7 +3,7 @@ module.exports = {
         {
             name: "Jane",
             photo: "",
-            scores: []
+            scores: [2, 5]
         }
     ]
 }

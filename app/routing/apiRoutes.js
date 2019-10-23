@@ -1,9 +1,21 @@
-var friends = require("./../data/friends.js");
+// var friends = require("./../data/friends.js");
+var friends = [
+    {
+        name: "Madeleine",
+        photo: "",
+        scores: [1, 1]
+    }
+]
 
 // get route /api/friends to display a json of all friends
 module.exports = function(app) {
     app.get("/api/friends/", function(req, res) {
-        return res.json(friends.friends);
+        return res.json(friends);
+    });
+
+    app.get("/api/clear/", function(req, res) {
+        friends.length = 0;
+        res.json({ok: true});
     });
 
     // post route /api/friends which will handle incoming survey results and compatibility logic
