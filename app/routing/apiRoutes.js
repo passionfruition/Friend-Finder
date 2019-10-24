@@ -14,7 +14,7 @@ module.exports = function(app) {
     // post route /api/friends which will handle incoming survey results and compatibility logic
     app.post("/api/friends/", function(req, res) {
         var newFriend = req.body;
-        newFriend.name = newFriend.name.replace(/\s+/g, "").toLowerCase();
+        // newFriend.name = newFriend.name.replace(/\s+/g, "").toLowerCase();
         friends.push(newFriend);
         res.json(newFriend);
     });

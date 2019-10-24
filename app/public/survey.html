@@ -31,6 +31,11 @@
         h2 {
             font-weight: bolder;
         }
+        #buddy-photo {
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+        }
         
     </style>
 </head>
@@ -63,11 +68,13 @@
     </div>
 
     <div class="container links">
-        <a href="/api/clear/">Clear Table</a>
-        <span> | </span>
-        <a href="/api/friends/">API Friends List</a>
+        <!-- <a href="/api/clear/">Clear Buddies</a>
+        <span> | </span> -->
+        <a href="/api/friends/">API Buddies List</a>
         <span> | </span>
         <a href="https://github.com/madeleineprak/Friend-Finder">GitHub Repo</a>
+        <span> | </span>
+        <a href="/">Home</a>
     </div>
 
     <!-- Modal -->
@@ -82,7 +89,7 @@
         </div>
         <div class="modal-body">
           <p id="buddy-name">Sorry, no buddys at the moment! Try again soon.</p>
-          <img id="buddy-photo" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Frowning_Face_with_Open_Mouth_Emoji_large.png?v=1480481053" alt="friend" height="300" width="300">
+          <img id="buddy-photo" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Frowning_Face_with_Open_Mouth_Emoji_large.png?v=1480481053" alt="friend">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -101,16 +108,16 @@
         $(document).ready(function() {
 
         var questions = [
-            "Q1",
-            "Q2",
-            "Q3",
-            "Q4",
-            "Q5",
-            "Q6",
-            "Q7",
-            "Q8",
-            "Q9",
-            "Q10"
+            "Your mind is always buzzing with unexplored ideas and plans.",
+            "Generally speaking, you rely more on your experience than your imagination.",
+            "You find it easy to stay relaxed and focused even when there is some pressure.",
+            "You rarely do something just out of sheer curiosity.",
+            "People can rarely upset you.",
+            "It is often difficult for you to relate to other people’s feelings.",
+            "In a discussion, truth should be more important than people’s sensitivities.",
+            "You rarely get carried away by fantasies and ideas.",
+            "You think that everyone’s views should be respected regardless of whether they are supported by facts or not.",
+            "You feel more energetic after spending time with a group of people."
         ];
         var url = "http://localhost:3000";
 

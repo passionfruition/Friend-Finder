@@ -2,6 +2,6 @@ module.exports = [
     {
         name: "Madeleine",
         photo: "",
-        scores: [2, 5]
+        scores: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     }
 ]
