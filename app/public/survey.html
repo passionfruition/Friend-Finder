@@ -119,7 +119,7 @@
             "You think that everyone’s views should be respected regardless of whether they are supported by facts or not.",
             "You feel more energetic after spending time with a group of people."
         ];
-        var url = "http://localhost:3000";
+        // var url = "http://localhost:3000";
 
         function renderQuestions(questionArray) {
             for (var i = 0; i < questionArray.length; i++) {
@@ -145,7 +145,7 @@
         }
 
         function findCompatibleFriend(currentUserData) {
-            $.get(url + "/api/friends", function(buddyData) {
+            $.get("/api/friends", function(buddyData) {
                 var bestCompatibility = 100;
                 var bestBuddyName = "";
                 var bestBuddyPhoto = "";
@@ -206,7 +206,7 @@
             emptyForm();
             findCompatibleFriend(newFriend);
 
-            $.get(url + "/api/friends/", function(data) {
+            $.get("/api/friends/", function(data) {
                 
                 $.post("/api/friends/", newFriend)
                     .then(function(data) {
