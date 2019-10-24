@@ -42,7 +42,7 @@
 <body>
 
     <div class="container">
-        <h1>Survey Questions</h1>
+        <h1><i class="fas fa-seedling"></i> Survey Questions</h1>
         <hr>
     </div>
 
@@ -82,7 +82,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modal-header">:(</h5>
+          <h5 class="modal-title" id="modal-header"><i class="fas fa-seedling"></i> Buddy Found:</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -168,7 +168,7 @@
                             bestCompatibility = totalDifference;
                             bestBuddyName = buddyData[i].name;
                             bestBuddyPhoto = buddyData[i].photo;
-                            $("#modal-header").text("Buddy Found!");
+                            // $("#modal-header").text("Buddy Found!");
                             $("#buddy-name").text("Your most compatible buddy is " + bestBuddyName + "!");
                             $("#buddy-photo").attr("src", bestBuddyPhoto);
                         }

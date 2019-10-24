@@ -18,7 +18,7 @@ The app stores each buddy in its database and then once a new user takes the sur
 You can also click on the "API Buddies List" button towards the bottom of the page to view all the buddies API in JSON format.
 
 ### App View
-
+![heybud](https://user-images.githubusercontent.com/26778117/67450725-2d64dc00-f5d3-11e9-8a59-e8056d19b3e1.PNG)
 
 ## Author(s)
 [Madeleine Prak](https://github.com/madeleineprak/)
