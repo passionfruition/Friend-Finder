@@ -23,11 +23,13 @@
             margin-top: 30px;
         }
         .btn {
-            /* padding: 20px; */
             margin-top: 80px;
         }
         .question {
             margin-top: 30px;
+        }
+        h2 {
+            font-weight: bolder;
         }
         
     </style>
@@ -39,14 +41,12 @@
         <hr>
     </div>
 
-    
-    
     <div class="container">
         <h2>About You</h2>
         <form>
             <div class="form-group">
                 <label for="inputName">Name (Required)</label>
-                <input type="text" class="form-control" id="name-input" placeholder="Jane Smith">
+                <input type="text" class="form-control" id="name-input" placeholder="Name">
             </div>
             <div class="form-group">
                 <label for="inputPhoto">Link to Photo Image (Required)</label>
@@ -67,18 +67,8 @@
         <span> | </span>
         <a href="/api/friends/">API Friends List</a>
         <span> | </span>
-        <a href="">GitHub Repo</a>
+        <a href="https://github.com/madeleineprak/Friend-Finder">GitHub Repo</a>
     </div>
-    <!-- <div class="container">
-        <div class="footer">
-            <a href="/api/clear/">Clear Table</a>
-            <span> | </span>
-            <a href="/api/tables/">API Friends List</a>
-            <span> | </span>
-            <a href="/api/waitlist/">GitHub Repo</a>
-        </div>
-    </div> -->
-        
 
     <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -96,7 +86,6 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -111,16 +100,25 @@
     <script>
         $(document).ready(function() {
 
-        
-        // var questions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-        var questions = ["Q1", "Q2"];
+        var questions = [
+            "Q1",
+            "Q2",
+            "Q3",
+            "Q4",
+            "Q5",
+            "Q6",
+            "Q7",
+            "Q8",
+            "Q9",
+            "Q10"
+        ];
         var url = "http://localhost:3000";
 
         function renderQuestions(questionArray) {
             for (var i = 0; i < questionArray.length; i++) {
                 var question = $("<div>").addClass("question");
-                var questionHead = $("<h3>").text("Question " + (i + 1));
-                var questionBody = $("<h4>").text(questionArray[i]);
+                var questionHead = $("<h2>").text("Question " + (i + 1));
+                var questionBody = $("<h3>").text(questionArray[i]);
                 var questionScoreSelect = $("<select>").addClass("form-control").addClass("user-question").attr("data-number", (i + 1));
                 var selectPlaceholder = $("<option>").text("Please Select").prop("hidden", true);
                 questionScoreSelect.append(selectPlaceholder);
@@ -200,7 +198,7 @@
 
             emptyForm();
             findCompatibleFriend(newFriend);
-            
+
             $.get(url + "/api/friends/", function(data) {
                 
                 $.post("/api/friends/", newFriend)

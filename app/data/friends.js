@@ -1,9 +1,7 @@
-module.exports = {
-    friends: [
-        {
-            name: "Jane",
-            photo: "",
-            scores: [2, 5]
-        }
-    ]
-}
+module.exports = [
+    {
+        name: "Madeleine",
+        photo: "",
+        scores: [2, 5]
+    }
+]

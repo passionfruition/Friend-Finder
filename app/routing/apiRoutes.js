@@ -1,11 +1,4 @@
-// var friends = require("./../data/friends.js");
-var friends = [
-    {
-        name: "Madeleine",
-        photo: "",
-        scores: [1, 1]
-    }
-]
+var friends = require("./../data/friends.js");
 
 // get route /api/friends to display a json of all friends
 module.exports = function(app) {
