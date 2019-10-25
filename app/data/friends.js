@@ -1,3 +1,4 @@
+// Populates buddy database with example buddies
 module.exports = [
     {
         name: "Kanye West",

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hey Bud!</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hk-grotesk" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -15,30 +17,36 @@
         body {
             font-family: "HKGroteskRegular", Roboto, sans-serif;
         }
+
         .fas {
             color: limegreen;
         }
+
         .links {
             bottom: 0;
             margin-top: 30px;
         }
+
         .btn {
             margin-top: 80px;
         }
+
         .question {
             margin-top: 30px;
         }
+
         h2 {
             font-weight: bolder;
         }
+
         #buddy-photo {
             height: 300px;
             width: 300px;
             object-fit: cover;
         }
-        
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -46,6 +54,7 @@
         <hr>
     </div>
 
+    <!-- Survey Form -->
     <div class="container">
         <h2>About You</h2>
         <form id="user-form">
@@ -63,225 +72,245 @@
             </div>
         </form>
     </div>
-    
-    
+
     <div class="container">
         <button type="submit" id="submit-button" class="btn btn-primary btn-lg btn-block">Submit</button>
     </div>
 
+    <!-- Page Links -->
     <div class="container links">
         <!-- <a href="/api/clear/">Clear Buddies</a>
         <span> | </span> -->
-        <a href="/api/friends/">API Buddies List</a>
+        <a href="/">Home</a>
         <span> | </span>
         <a href="https://github.com/madeleineprak/Friend-Finder">GitHub Repo</a>
         <span> | </span>
-        <a href="/">Home</a>
+        <a href="/api/friends/">API Buddies List</a>
     </div>
 
-    <!-- Modal -->
-<div class="modal fade" id="buddyModal" tabindex="-1" role="dialog" aria-labelledby="buddyModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modal-header"><i class="fas fa-seedling"></i> Buddy Found:</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p id="buddy-name">Sorry, no buddys at the moment! Try again soon.</p>
-          <img id="buddy-photo" src="https://cdn.shopify.com/s/files/1/1061/1924/products/Frowning_Face_with_Open_Mouth_Emoji_large.png?v=1480481053" alt="friend">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="close-button" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-      <!-- Modal -->
-<div class="modal fade" id="incompleteFormModal" tabindex="-1" role="dialog" aria-labelledby="incompleteFormModalLabel" aria-hidden="true">
+    <!-- Compatible Buddy Modal -->
+    <div class="modal fade" id="buddyModal" tabindex="-1" role="dialog" aria-labelledby="buddyModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="modal-header"><i class="fas fa-seedling"></i> Uh Oh!</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-header"><i class="fas fa-seedling"></i> Buddy Found:</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="buddy-name">Sorry, no buddys at the moment! Try again soon.</p>
+                    <img id="buddy-photo"
+                        src="https://cdn.shopify.com/s/files/1/1061/1924/products/Frowning_Face_with_Open_Mouth_Emoji_large.png?v=1480481053"
+                        alt="friend">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="close-button"
+                        data-dismiss="modal">Close</button>
+                </div>
             </div>
-            <div class="modal-body">
-              <p id="buddy-name">Please answer all of the questions.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" id="close-button" data-dismiss="modal">Close</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
+    <!-- Invalid Form Modal -->
+    <div class="modal fade" id="incompleteFormModal" tabindex="-1" role="dialog"
+        aria-labelledby="incompleteFormModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-header"><i class="fas fa-seedling"></i> Uh Oh!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="buddy-name">Please answer all of the questions.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="close-button"
+                        data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
+            // Survey Questions
+            var questions = [
+                "Your mind is always buzzing with unexplored ideas and plans.",
+                "Generally speaking, you rely more on your experience than your imagination.",
+                "You find it easy to stay relaxed and focused even when there is some pressure.",
+                "You rarely do something just out of sheer curiosity.",
+                "People can rarely upset you.",
+                "It is often difficult for you to relate to other people’s feelings.",
+                "In a discussion, truth should be more important than people’s sensitivities.",
+                "You rarely get carried away by fantasies and ideas.",
+                "You think that everyone’s views should be respected regardless of whether they are supported by facts or not.",
+                "You feel more energetic after spending time with a group of people."
+            ];
 
-        var questions = [
-            "Your mind is always buzzing with unexplored ideas and plans.",
-            "Generally speaking, you rely more on your experience than your imagination.",
-            "You find it easy to stay relaxed and focused even when there is some pressure.",
-            "You rarely do something just out of sheer curiosity.",
-            "People can rarely upset you.",
-            "It is often difficult for you to relate to other people’s feelings.",
-            "In a discussion, truth should be more important than people’s sensitivities.",
-            "You rarely get carried away by fantasies and ideas.",
-            "You think that everyone’s views should be respected regardless of whether they are supported by facts or not.",
-            "You feel more energetic after spending time with a group of people."
-        ];
-        var formIsValid = true;
+            var formIsValid = true;
 
-        function renderQuestions(questionArray) {
-            for (var i = 0; i < questionArray.length; i++) {
-                var question = $("<div>").addClass("question");
-                var questionHead = $("<h2>").text("Question " + (i + 1));
-                var questionBody = $("<h3>").text(questionArray[i]);
-                var questionScoreSelect = $("<select>").addClass("form-control").addClass("user-question").prop("required", true).attr("id", "question" + (i + 1));
-                var selectPlaceholder = $("<option>").text("Please Select").prop("hidden", true);
-                questionScoreSelect.append(selectPlaceholder);
-                for (var j = 0; j < 5; j++) {
-                    if (j == 0) {
-                        var option = $("<option>").text(j+1 + " (Strongly Disagree)");
-                    } else if (j == 4) {
-                        var option = $("<option>").text(j+1 + " (Strongly Agree)");
-                    } else {
-                        var option = $("<option>").text(j+1);
+            // Renders the survey questions
+            function renderQuestions(questionArray) {
+                for (var i = 0; i < questionArray.length; i++) {
+                    var question = $("<div>").addClass("question");
+                    var questionHead = $("<h2>").text("Question " + (i + 1));
+                    var questionBody = $("<h3>").text(questionArray[i]);
+                    var questionScoreSelect = $("<select>").addClass("form-control").addClass("user-question").prop("required", true).attr("id", "question" + (i + 1));
+                    var selectPlaceholder = $("<option>").text("Please Select").prop("hidden", true);
+                    questionScoreSelect.append(selectPlaceholder);
+                    for (var j = 0; j < 5; j++) {
+                        if (j == 0) {
+                            var option = $("<option>").text(j + 1 + " (Strongly Disagree)");
+                        } else if (j == 4) {
+                            var option = $("<option>").text(j + 1 + " (Strongly Agree)");
+                        } else {
+                            var option = $("<option>").text(j + 1);
+                        }
+                        questionScoreSelect.append(option);
                     }
-                    questionScoreSelect.append(option);
+                    var invalid = $("<div>").addClass("invalid-feedback").text("Please answer this question.");
+                    question.append(questionHead, questionBody, questionScoreSelect, invalid);
+                    $("#survey-questions").append(question);
                 }
-                var invalid = $("<div>").addClass("invalid-feedback").text("Please answer this question.");
-                question.append(questionHead, questionBody, questionScoreSelect, invalid);
-                $("#survey-questions").append(question);
             }
-        }
 
-        function findCompatibleFriend(currentUserData) {
-            $.get("/api/friends", function(buddyData) {
-                var bestCompatibility = 100;
-                var bestBuddyName = "";
-                var bestBuddyPhoto = "";
-                for(var i = 0; i < buddyData.length; i++) {
-                    for( var j = 0; j < buddyData[i].scores.length; j++) {
-                        var totalDifference = 0;
-                        var buddyScore = parseInt(buddyData[i].scores[j]);
-                        var userScore = parseInt(currentUserData.scores[j]);
-                        if (buddyScore > userScore) {
-                            totalDifference += (buddyScore - userScore);
+            // Determines user's most compatible bud
+            function findCompatibleFriend(currentUserData) {
+                $.get("/api/friends", function (buddyData) {
+                    var bestCompatibility = 100;
+                    var bestBuddyName = "";
+                    var bestBuddyPhoto = "";
+                    for (var i = 0; i < buddyData.length; i++) {
+                        for (var j = 0; j < buddyData[i].scores.length; j++) {
+                            var totalDifference = 0;
+                            var buddyScore = parseInt(buddyData[i].scores[j]);
+                            var userScore = parseInt(currentUserData.scores[j]);
+                            if (buddyScore > userScore) {
+                                totalDifference += (buddyScore - userScore);
+                            }
+                            if (buddyScore < userScore) {
+                                totalDifference += (userScore - buddyScore);
+                            }
+                            if (totalDifference < bestCompatibility) {
+                                bestCompatibility = totalDifference;
+                                bestBuddyName = buddyData[i].name;
+                                bestBuddyPhoto = buddyData[i].photo;
+                                $("#buddy-name").text("Your most compatible buddy is " + bestBuddyName + "!");
+                                $("#buddy-photo").attr("src", bestBuddyPhoto);
+                            }
                         }
-                        if (buddyScore < userScore) {
-                            totalDifference += (userScore - buddyScore);
-                        }
-                        if (totalDifference < bestCompatibility) {
-                            bestCompatibility = totalDifference;
-                            bestBuddyName = buddyData[i].name;
-                            bestBuddyPhoto = buddyData[i].photo;
-                            $("#buddy-name").text("Your most compatible buddy is " + bestBuddyName + "!");
-                            $("#buddy-photo").attr("src", bestBuddyPhoto);
-                        }
-                     }
+                    }
+                    $("#buddyModal").modal('show');
+                })
+            }
+
+            // Submits the user info from survey
+            function submitValidForm() {
+                var newFriend = {
+                    name: $("#name-input").val().trim(),
+                    photo: $("#photo-input").val().trim(),
+                    scores: []
+                };
+
+                $.each($(".user-question option:selected"), function () {
+                    var score = parseInt($(this).val());
+                    newFriend.scores.push(score);
+                    findCompatibleFriend(newFriend);
+                })
+
+                $.get("/api/friends/", function (data) {
+                    $.post("/api/friends/", newFriend)
+                        .then(function (data) {
+                            console.log("New friend added!", data);
+                        });
+                })
+            }
+
+            // Form validation
+            function checkFormValidity() {
+                var name = $("#name-input").val().trim();
+                var photo = $("#photo-input").val().trim();
+                var selectValues = $("select");
+                var numUnanswered = 0;
+
+                // Checks for any unanswered selection questions
+                for (var i = 0; i < questions.length; i++) {
+                    var val = $("#question" + (i + 1)).val();
+                    if (val == "Please Select") {
+                        numUnanswered++;
+                        $("#question" + (i + 1)).addClass("is-invalid");
+                    } else {
+                        $("#question" + (i + 1)).removeClass("is-invalid").addClass("is-valid");
+                    }
                 }
-                $("#buddyModal").modal('show');
-            })
-        }
 
-        function validForm() {
-            var newFriend = {
-                name: $("#name-input").val().trim(),
-                photo: $("#photo-input").val().trim(),
-                scores: []
-            };
-
-            $.each($(".user-question option:selected"), function() {
-                var score = parseInt($(this).val());
-                newFriend.scores.push(score);
-                findCompatibleFriend(newFriend);
-            })
-            
-            // $("#user-form").addClass("was-validated");
-            // emptyForm();
-            
-            $.get("/api/friends/", function(data) {
-                $.post("/api/friends/", newFriend)
-                    .then(function(data) {
-                        console.log("New friend added!", data);
-                    });
-            })
-        }
-
-        function checkFormValidity() {
-            
-            var name = $("#name-input").val().trim();
-            var photo = $("#photo-input").val().trim();
-            var selectValues = $("select");
-            var numUnanswered = 0;
-            for (var i = 0; i < questions.length; i++) {
-                var val = $("#question" + (i+1)).val();
-                if (val == "Please Select") {
-                    numUnanswered++;
-                    $("#question" + (i+1)).addClass("is-invalid");
+                // Validates name input
+                if (name == "") {
+                    $("#name-input").addClass("is-invalid");
                 } else {
-                    $("#question" + (i+1)).removeClass("is-invalid").addClass("is-valid");
+                    $("#name-input").removeClass("is-invalid").addClass("is-valid");
+                }
+
+                // Validates photo url input
+                if (photo == "") {
+                    $("#photo-input").addClass("is-invalid");
+                } else {
+                    $("#photo-input").removeClass("is-invalid").addClass("is-valid");
+                }
+
+                // Validates full form
+                if (name == "" || photo == "" || numUnanswered > 0) {
+                    formIsValid = false;
+                    $("#incompleteFormModal").modal('show');
+                } else {
+                    formIsValid = true;
                 }
             }
-            if (name == "") {
-                $("#name-input").addClass("is-invalid");
-            } else {
-                $("#name-input").removeClass("is-invalid").addClass("is-valid");
+
+            // When user clicks submit button
+            $("#submit-button").on("click", function (event) {
+                event.preventDefault();
+                checkFormValidity();
+                if (formIsValid) {
+                    submitValidForm();
+                }
+            })
+
+            // Resets the form after 
+            function emptyForm() {
+                $("#name-input").val("");
+                $("#photo-input").val("");
+                $('select').prop('selectedIndex', 0);
+                for (var i = 0; i < questions.length; i++) {
+                    $("#question" + (i + 1)).removeClass("is-valid");
+                }
+                $("#name-input").removeClass("is-valid");
+                $("#photo-input").removeClass("is-valid");
             }
 
-            if (photo == "") {
-                $("#photo-input").addClass("is-invalid");
-            } else {
-                $("#photo-input").removeClass("is-invalid").addClass("is-valid");
-            }
+            // Reset the form when close button clicked
+            $("#close-button").on("click", function (event) {
+                event.preventDefault();
+                emptyForm();
+            })
 
-            if (name == "" || photo == "" || numUnanswered > 0) {
-                formIsValid = false;
-                $("#incompleteFormModal").modal('show');
-            } else {
-                formIsValid = true;
-            }
-        }
-        
-        $("#submit-button").on("click", function(event) {
-            event.preventDefault();
-            checkFormValidity();
-            if (formIsValid) {
-                validForm();
-            }
+            // Initial render of survey questions
+            renderQuestions(questions);
         })
-
-        function emptyForm() {
-            $("#name-input").val("");
-            $("#photo-input").val("");
-            $('select').prop('selectedIndex', 0);
-            for (var i = 0; i < questions.length; i++) {
-                $("#question" + (i+1)).removeClass("is-valid");
-            }
-            $("#name-input").removeClass("is-valid");
-            $("#photo-input").removeClass("is-valid");
-        }
-
-        $("#close-button").on("click", function(event) {
-            event.preventDefault();
-            emptyForm();
-        })
-
-        renderQuestions(questions);
-    })
     </script>
 </body>
+
 </html>
