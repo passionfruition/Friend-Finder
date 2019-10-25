@@ -7,7 +7,7 @@ module.exports = [
     {
         name: "Post Malone",
         photo: "https://images.complex.com/complex/images/c_limit,dpr_auto,q_90,w_720/fl_lossy,pg_1/tkxndk4gl61ruxtjqtyb/post-malone-siriusxm",
-        scores: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+        scores: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
     },
     {
         name: "Cardi B",
