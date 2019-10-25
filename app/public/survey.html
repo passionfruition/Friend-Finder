@@ -80,7 +80,7 @@
     </div>
 
     <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="buddyModal" tabindex="-1" role="dialog" aria-labelledby="buddyModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -99,6 +99,27 @@
       </div>
     </div>
   </div>
+
+      <!-- Modal -->
+<div class="modal fade" id="incompleteFormModal" tabindex="-1" role="dialog" aria-labelledby="incompleteFormModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modal-header"><i class="fas fa-seedling"></i> Uh Oh!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="buddy-name">Please answer all of the questions.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="close-button" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -172,7 +193,7 @@
                         }
                      }
                 }
-                $("#exampleModal").modal('show');
+                $("#buddyModal").modal('show');
             })
         }
 
@@ -210,11 +231,28 @@
                 var val = $("#question" + (i+1)).val();
                 if (val == "Please Select") {
                     numUnanswered++;
+                    $("#question" + (i+1)).addClass("is-invalid");
+                } else {
+                    $("#question" + (i+1)).removeClass("is-invalid").addClass("is-valid");
                 }
             }
-            if(name == "" || photo == "" || numUnanswered > 0) {
+            if (name == "") {
+                $("#name-input").addClass("is-invalid");
+            } else {
+                $("#name-input").removeClass("is-invalid").addClass("is-valid");
+            }
+
+            if (photo == "") {
+                $("#photo-input").addClass("is-invalid");
+            } else {
+                $("#photo-input").removeClass("is-invalid").addClass("is-valid");
+            }
+
+            if (name == "" || photo == "" || numUnanswered > 0) {
                 formIsValid = false;
-                alert("Please answer all questions.");
+                $("#incompleteFormModal").modal('show');
+            } else {
+                formIsValid = true;
             }
         }
         
@@ -230,6 +268,11 @@
             $("#name-input").val("");
             $("#photo-input").val("");
             $('select').prop('selectedIndex', 0);
+            for (var i = 0; i < questions.length; i++) {
+                $("#question" + (i+1)).removeClass("is-valid");
+            }
+            $("#name-input").removeClass("is-valid");
+            $("#photo-input").removeClass("is-valid");
         }
 
         $("#close-button").on("click", function(event) {
