@@ -1,6 +1,6 @@
 # Friend-Finder
 
-This is like a dating app but for friends. The user can take a survey and find a buddy that has the highest compatibility based on a number of survey questions.
+This is like a dating app but for friends. The user can take a survey and find a buddy that has the highest compatibility based on a number of survey questions. Click [here](https://heybud-devmadeleine.herokuapp.com/) to try it.
 
 ## Tools Utilized
 * Express
